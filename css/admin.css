@@ -1,0 +1,141 @@
+.new-amsterdam-regular {
+    font-family: "New Amsterdam", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .rajdhani-medium {
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+:root{
+    --cor-princ: #D2232A;
+    --cor-seg: #000000;
+    --cor-text: #ffff;
+    --cor-text-title: #fa0000;
+    --cor-text-news: #000000;
+    --cor-blackbox: rgba(0, 0, 0, 0.7);
+    --padding-size: 0px 8px;
+    --font-text: "Rajdhani", sans-serif;
+    --font-title: "New Amsterdam", sans-serif;
+    --box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.2);
+    --border-news:  1px solid black;
+    --font-size-title: 20px;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    list-style:none; 
+    vertical-align:baseline;
+}
+
+body{
+    background-color: var(--cor-princ);
+}
+
+form{
+    width: 300px;
+    font-size: 20px;
+    border-radius: 5px;
+    background-color: white;
+    font-weight: bold;
+    box-shadow: var(--box-shadow);
+    font-family: var(--font-text);
+}
+
+form h1{
+    font-size: 30px;
+}
+
+form label{
+    margin-top: 10px;
+}
+
+.logo__fla img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    margin-right: 50px;
+}
+
+.title__container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font-text);
+    color: var(--cor-text);
+    font-weight: bold;
+    font-size: 30px;
+    margin-right: 50px;
+}
+
+.form__container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.form__content{
+    display: flex;
+    flex-direction: column;
+    margin: 10px 15px 10px 8px;
+}
+
+.form__content h1, h6{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form__content h6{
+    margin-top: -10px;
+    font-weight: normal;
+}
+
+.form__content input{
+    width: 100%;
+    height: 50px;
+    border: var(--border-news);
+    border-radius: 3px;
+    padding-left: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+
+.form__content__submit{
+    display: flex;
+    justify-content: center;
+    margin: 0px 5px 0px 5px;
+    margin-bottom: 10px;
+    
+}
+
+.form__content__submit input{
+    background-color: white;
+    border: var(--border-news);
+    border-radius: 15px;
+    font-size: 20px;
+    font-family: var(--font-text);
+    font-weight: bold;
+    margin-top: 10px;
+    width: 30%;
+    height: 50px;
+    transition: color 0.2s;
+    
+}
+
+.form__content__submit input:hover{
+    color: var(--cor-text-title);
+    background-color: var(--cor-seg);
+}
+
+
+
+

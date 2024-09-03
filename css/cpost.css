@@ -1,0 +1,178 @@
+
+.new-amsterdam-regular {
+    font-family: "New Amsterdam", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .rajdhani-medium {
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  .suse-uniquifier {
+    font-family: "SUSE", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+:root{
+    --cor-princ: #D2232A;
+    --cor-seg: #000000;
+    --cor-text: #ffff;
+    --cor-text-title: #fa0000;
+    --cor-text-news: #000000;
+    --cor-blackbox: rgba(0, 0, 0, 0.7);
+    --padding-size: 0px 8px;
+    --font-text: "Rajdhani", sans-serif;
+    --font-title: "New Amsterdam", sans-serif;
+    --font-text-side-bar: "SUSE", sans-serif;
+    --box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    --border-news:  1px solid black;
+    --font-size-title: 20px;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+header{
+    height: 15%;
+    width: 100%;
+    background-color: var(--cor-princ);
+    font-family: var(--font-title);
+    color: var(--cor-text);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.header__container{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.header__container p{
+    font-size: 30px;
+}
+
+
+.logo{
+    width: 100px;
+    height: 100px;
+    margin: 5px 0px 5px 5px;
+}
+
+.side__bar__container{
+    position: fixed;
+    display: block;
+    justify-content: center;
+    background-color: #000000;
+    width: 13%;
+    height:100%;
+    font-family: var(--font-text-side-bar);
+    top: 15%;
+}
+
+.side__bar__cards a{
+    display: flex;
+    row-gap: 10px;
+    column-gap: 10px;
+    margin: 20px 0px 20px 20px;
+    overflow: hidden;
+}
+
+.side__bar__cards p, i, a{
+    text-decoration: none;
+    color: var(--cor-text);
+}
+
+.side__bar__cards p, i{
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    font-size: 30px;
+}
+
+/* atualizando a partir daqui, não mexer em cima no layout pré definido */
+
+
+form, h1{
+    width: 98%;
+    height: auto;
+    padding: 10px 10px 10px 0px;
+    margin: 10px 10px 10px 0px;
+}
+
+form{
+    border: 1px solid black;
+}
+
+h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font-text);
+    font-size: 30px;
+    padding-bottom: auto;
+}
+
+.create__post__container{
+        margin-left: 14%;
+        margin-top: 10%;
+}
+
+.create__post__form__content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 15px 10px 8px;
+    font-family: var(--font-text);
+    font-size: 25px;
+}
+
+.create__post__form__content label{
+    width: 50%;
+    display: flex;
+    justify-content: start;
+}
+
+.create__post__form__content input{
+    width: 50%;
+    height: 45px;
+    padding-left: 5px;
+}
+
+.create__post__form__submit{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: end;
+    margin-right: 10px;
+}
+
+.create__post__form__submit input{
+    background-color: white;
+    border: var(--border-news);
+    border-radius: 15px;
+    font-size: 20px;
+    font-family: var(--font-text);
+    font-weight: bold;
+    margin-top: 10px;
+    width: 150px;
+    height: 50px;
+    transition: color 0.2s;
+}
+
+.create__post__form__submit input:hover{
+    color: var(--cor-text-title);
+    background-color: var(--cor-seg);
+}
