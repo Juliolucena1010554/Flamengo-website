@@ -38,18 +38,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atualizar Post</title>
+    <link rel="stylesheet" href="../css/editpost.css">
 </head>
 <body>
-    <form action="#" method="POST" enctype="multipart/form-data">
-        <input type="hidden" name="id" value="<?php echo $id; ?>">
+    <section class="header">
+        <img src="..\misc\fotos\imagenspost\logofla.png" alt="">
+        <h1 class="title__container">Administração</h1>
+    </section>
 
-        <label> Titulo </label>
-        <input type="text" name="titulo" id="titulo" value="<?php echo isset($cont['titulo']) ? $cont['titulo'] : ''; ?>">
-        <label> Matéria </label>
-        <input type="text" name="materia" id="materia" value="<?php echo isset($cont['materia']) ? $cont['materia'] : ''; ?>">
-        <label> Imagem </label>
-        <input type="file" name="imagem" id="imagem">
-        <input type="submit" value="enviar">
-    </form>
+    <section class="form__edit">
+        <form action="#" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="id" value="<?php echo $id; ?>">
+
+            <label> Título </label>
+            <input type="text" name="titulo" id="titulo" value="<?php echo isset($cont['titulo']) ? $cont['titulo'] : ''; ?>">
+            <label> Matéria </label>
+            <input type="text" name="materia" id="materia" value="<?php echo isset($cont['materia']) ? $cont['materia'] : ''; ?>">
+            <label> Imagem </label>
+            <input type="file" name="imagem" id="imagem">
+            <input type="submit" value="enviar">
+        </form>
+    <section> 
 </body>
 </html>

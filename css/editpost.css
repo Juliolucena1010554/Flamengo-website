@@ -1,0 +1,67 @@
+.new-amsterdam-regular {
+    font-family: "New Amsterdam", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .rajdhani-medium {
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+:root{
+    --cor-princ: #D2232A;
+    --cor-seg: #000000;
+    --cor-text: #ffff;
+    --cor-text-title: #fa0000;
+    --cor-text-news: #000000;
+    --cor-blackbox: rgba(0, 0, 0, 0.7);
+    --padding-size: 0px 8px;
+    --font-text: "Rajdhani", sans-serif;
+    --font-title: "New Amsterdam", sans-serif;
+    --box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    --border-news:  1px solid black;
+    --font-size-title: 20px;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.header{
+    background-color: var(--cor-princ);
+    display: flex;
+}
+
+.header img{
+    width: 100px;
+    height: 100px;
+    margin: 10px 10px;
+}
+
+.header h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font-title);
+    font-size: 30px;
+}
+
+.form__edit{
+    padding: 10px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.form__edit label, input{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 110%;
+    height: 50px;
+    font-family: var(--font-text);
+}
