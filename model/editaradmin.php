@@ -10,7 +10,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $nome = isset($_POST['nome']) ? $_POST['nome'] : '';
     $senha = isset($_POST['senha']) ? $_POST['senha'] : '';
-    $imagem = isset($_FILES['imagem']) ? $_FILES['imagem'] : null;
+    $imagem = isset($_FILES['imagem']);
+    $imagem_atual = $cont['adminimage'];
 
     if (!empty($imagem['name'])) {
         
@@ -21,7 +22,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $sql = "UPDATE tb_admin SET adminlog = '$nome', adminpass = '$senha', adminimage = '$nome_imagem' WHERE id = '$id';";
         $resul = mysqli_query($conn, $sql);
+    
+        echo "<script>
+                alert('Inserido com sucesso.');
+                window.location.href='../paginas/userpages.php';
+            </script>";
 
+    }else if(!empty($imagem)){
+        $nome_imagem = $imagem_atual;
+
+        $sql = "UPDATE tb_admin SET adminlog = '$nome', adminpass = '$senha', adminimage = '$nome_imagem' WHERE id = '$id';";
+        $resul = mysqli_query($conn, $sql);
+    
         echo "<script>
                 alert('Inserido com sucesso.');
                 window.location.href='../paginas/userpages.php';
@@ -37,8 +49,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=SUSE&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=New+Amsterdam&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <title>Atualizar Admin</title>
     <link rel="stylesheet" href="../css/editpost.css">
+    <script>
+        function validarFormulario(event) {
+            let nome = document.getElementById('nome').value.trim();
+            let senha = document.getElementById('senha').value.trim();
+            
+            if (nome === '' || senha === '') {
+                alert('Por favor, preencha todos os campos obrigatórios.');
+                event.preventDefault();
+                return false;
+            }
+            return true;
+        }
+
+        window.onload = function() {
+            document.querySelector('form').onsubmit = validarFormulario;
+        };
+    </script>
 </head>
 <body>
     <section class="header">
