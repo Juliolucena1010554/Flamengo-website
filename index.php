@@ -26,10 +26,8 @@
     <section class="links__externos">
 
             <a href="https://ge.globo.com/futebol/brasileirao-serie-a/" class="text__link"><h3> TABELA </h3></a>
-            <a href="https://ge.globo.com/futebol/brasileirao-serie-a/" class="text__link"><h3> TABELA </h3></a>
-            <a href="https://ge.globo.com/futebol/brasileirao-serie-a/" class="text__link"><h3> TABELA </h3></a>
-            <a href="https://ge.globo.com/futebol/brasileirao-serie-a/" class="text__link"><h3> TABELA </h3></a>
-            <a href="https://ge.globo.com/futebol/brasileirao-serie-a/" class="text__link"><h3> TABELA </h3></a>
+            <a href="https://ge.globo.com/futebol/times/flamengo/agenda-de-jogos-do-flamengo/#/proximos-jogos" class="text__link"><h3> JOGOS </h3></a>
+            <a href="https://ge.globo.com/futebol/times/flamengo/videos/" class="text__link"><h3> VÍDEOS </h3></a>
 
     </section>
 

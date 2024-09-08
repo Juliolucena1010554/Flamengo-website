@@ -228,9 +228,6 @@ header, .logo{
 }
 
 .post__cards__text{
-    display: flex;
-    justify-content: flex-end;
-    align-content: flex-end;
     color: var(--cor-text-news);
 }
 
@@ -285,15 +282,15 @@ header, .logo{
 
 .footer__text{
     display: flex;
-    align-items: center;
-    text-align: center;
     color: var(--cor-text);
     font-family: var(--font-text);
     padding: 10px;
 }
 
 .footer__text p{
-    margin: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 5vh 5vh 5vh 5vh;
     font-size: 20px;
 }
 

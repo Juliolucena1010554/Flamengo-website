@@ -16,7 +16,17 @@
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.5.1/uicons-regular-straight/css/uicons-regular-straight.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.5.1/uicons-solid-rounded/css/uicons-solid-rounded.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.5.1/uicons-regular-rounded/css/uicons-regular-rounded.css'>
-    <link rel="stylesheet" href="../css/cpost.css">
+    <link rel="stylesheet" href="../css/userpages.css">
+    <?php
+        include_once '../factory/connect.php';
+        session_start();
+
+        // Verifica se o usuário está logado
+        if (!isset($_SESSION['adminlog'])) {
+            header("Location: adminlogin.php");
+            exit();
+        }
+    ?>
     <title>Página Administração | Flamengo </title>
 
 </head>
@@ -63,30 +73,46 @@
                     <p> Sair </p>
                 </a>            
             </section>
-
     </section>
 
-    <section class="create__post__container">
-    <h1>Crie um novo post</h1>
-                <form action="../model/createpost.php" method="post" enctype="multipart/form-data">
-                    <section class="create__post__form__content">
-                        <label> Titulo: </label>
-                        <input type="text" name="newsTitle" id="newsTitle">
-                    </section>
-                    <section class="create__post__form__content">
-                        <label> Matéria: </label>
-                        <input type="text" name="newsText" id="newsText">
-                    </section>
-                    <section class="create__post__form__content">
-                        <label> Imagem: </label>
-                        <input type="file" name="newsImage" id="newsImage">
-                    </section>
-                    <section class="create__post__form__submit">
-                        <input type="submit" value="enviar">
-                    </section>
-                </form>
+    <section class="user__container">
+        <section class="user__text">
+            <h1>Usuários</h1>
+        </section>
+        <section class="button__add">
+            <form action="../model/createadmin.php" method="post">
+                <input type="submit" value="Adicionar Usuário">
+            </form>
         </section>
 
-        
-    </body>
+        <?php
+            $sql = 'SELECT * FROM tb_admin;';
+            $resul = mysqli_query($conn, $sql);
+            while ($cont = mysqli_fetch_array($resul)) { 
+        ?>
+        <section class="user__card">
+            <section class="user__card__image">
+                <img src="..\misc\fotos\post\<?php echo $cont['adminimage']; ?>" alt="Imagem Usuário">
+            </section>
+            <p> ID: <?php echo $cont['id']; ?> </p>
+            <p>Nome: <?php echo $cont['adminlog']; ?></p>
+            <p>Senha: <?php echo $cont['adminpass']; ?></p>
+            <section class="buttons__cards">
+                
+                <form action="../model/editaradmin.php" method="post">
+                    <input type="hidden" name="id" value="<?php echo $cont['id'] ?>">
+                    <input type="submit" value="Editar" style="background-color: green;">
+                </form>
+                
+                <form action="../model/deleteadmin.php" method="post">
+                    <input type="hidden" name="id" value="<?php echo $cont['id'] ?>">
+                    <input type="submit" value="Deletar" style="background-color: red;">
+                </form>
+            </section>
+        </section>
+        <?php } ?>
+    </section>
+
+
+</body>
 </html>

@@ -54,7 +54,7 @@
             </section>
 
             <section class="side__bar__cards">
-                <a href="">
+                <a href="userpages.php">
                     <i class="fi fi-rr-users"></i>
                     <p> Gerenciar usuários </p>
                 </a>            

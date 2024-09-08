@@ -8,7 +8,7 @@
 
         if(!empty($imagem["name"])){
 
-            preg_match("/\.(gif|bmp|png|jpg|jpeg|jfif){1}$/i", $imagem["name"], $ext);
+            preg_match("/\.(gif|bmp|png|jpg|jpeg|jfif|webp|avif){1}$/i", $imagem["name"], $ext);
             $nome_imagem = md5(uniqid(time())) . "." . $ext[1];
             $caminho_imagem = "../misc/fotos/post/" . $nome_imagem;
             move_uploaded_file($imagem["tmp_name"], $caminho_imagem);
