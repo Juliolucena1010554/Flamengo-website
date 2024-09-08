@@ -11,6 +11,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css\index.css">
+
+    <?php
+        include_once 'factory/connect.php';
+        session_start();
+    ?>
     <title>Início | Flamengo </title>
 </head>
 <body>
@@ -87,51 +92,27 @@
         <section class="news__title">
             <p> Reportagens </p>
         </section>
-        <section class="post__container">
-            <section class="post__cards">
-                <img src="misc\fotos\imagenspost\zico.avif" alt="">
-                <section class="post__cards__content">
-                    <p class="post__cards__title">Zico se diverte em miami com seus filhos romeu e julieta.</p>
-                    <p class="post__cards__text"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laborum recusandae perferendis cupiditate facilis possimus at tenetur, minima nulla repellendus nostrum iure soluta, sit molestias assumenda vitae voluptates fuga illum.</p>
+
+        <?php
+            $sql = 'SELECT * FROM tb_post;';
+            $resul = mysqli_query($conn, $sql);
+        ?>
+            <section class="post__container">
+        <?php
+            while ($cont = mysqli_fetch_array($resul)) { 
+        ?>
+                <section class="post__cards">
+                    <img src="misc/fotos/post/<?php echo $cont['imagem']; ?>" alt="">
+                    <section class="post__cards__content">
+                        <p class="post__cards__title"> <?php echo $cont['titulo']; ?> </p>
+                        <p class="post__cards__text"> <?php echo $cont['materia']; ?></p>
                     <section class="post__cards__footer">
                         <p class="post__cards__footer"> Há 2 dias - Postado por Rubio </p>
                     </section>
                 </section>
             </section>
+        <?php } ?>
 
-            <section class="post__cards">
-                <img src="misc\fotos\imagenspost\felipel_resized.webp" alt="" style="object-position: center top;">
-                <section class="post__cards__content">
-                    <p class="post__cards__title">Felipe Luiz estreia com vitória em seu primeiro campeonato.</p>
-                    <p class="post__cards__text"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laborum recusandae perferendis cupiditate facilis possimus at tenetur, minima nulla repellendus nostrum iure soluta, sit molestias assumenda vitae voluptates fuga illum.</p>
-                    <section class="post__cards__footer">
-                        <p class="post__cards__footer"> Há 5 dias - Postado por Valmir </p>
-                    </section>
-                </section>
-            </section>
-
-            <section class="post__cards">
-                <img src="misc\fotos\noticias\pedroflapal.webp" alt="">
-                <section class="post__cards__content">
-                    <p class="post__cards__title">Pedro recebe uma proposta de 150 milhões de reais do Forest da inglaterra.</p>
-                    <p class="post__cards__text"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laborum recusandae perferendis cupiditate facilis possimus at tenetur, minima nulla repellendus nostrum iure soluta, sit molestias assumenda vitae voluptates fuga illum.</p>
-                    <section class="post__cards__footer">
-                        <p class="post__cards__footer"> Há 1 semana - Postado por Roberto </p>
-                    </section>
-                </section>
-            </section>
-
-            <section class="post__cards">
-                <img src="misc\fotos\imagenspost\flaprecos.avif" alt="">
-                <section class="post__cards__content">
-                    <p class="post__cards__title">Times da Série A superam marca de R$ 2 bilhões em reforços no ano; veja quem mais gastou.</p>
-                    <p class="post__cards__text"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laborum recusandae perferendis cupiditate facilis possimus at tenetur, minima nulla repellendus nostrum iure soluta, sit molestias assumenda vitae voluptates fuga illum.</p>
-                    <section class="post__cards__footer">
-                        <p class="post__cards__footer"> Há 3 horas - Postado por Neymar </p>
-                    </section>
-                </section>
-            </section>
-        </section>
 
     <!-- Footer Principal e Patrocinios -->
 
@@ -164,6 +145,5 @@
                         <img src="misc\fotos\icons\brb.webp" alt="logo Banco BRB" class="footer__img">
                     </section>
             </section>
-        </section>
     </footer>
 </html>

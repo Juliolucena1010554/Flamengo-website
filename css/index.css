@@ -29,6 +29,7 @@
 *{
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 header, .logo{
@@ -186,7 +187,7 @@ header, .logo{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin: 3vh 0vh 3vh 0vh;
+    margin: 3vh 0vh 0vh 0vh;
 }
 .post__cards{
 
@@ -246,39 +247,53 @@ header, .logo{
     text-decoration: none;
 }
 
+.footer__container {
+    width: 100%;
+    background-color: var(--cor-princ);
+}
+
+
+.footer__princ, .footer__secund{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 10px;
+}
+
 .footer__princ{
     background-color: var(--cor-princ);
 }
 
 .footer__secund{
-    display: inline-block;
+    display: flex;
     justify-content: center;
-    text-align: center;
+    align-items: center;
     padding-top: 1rem;
-    width: 100%;
-    color: var(--cor-princ);
     background-color: var(--cor-seg);
+    color: var(--cor-princ);
     font-family: var(--font-text);
-    font-size: 25px;
+    font-size: 20px;
 }
 
 .footer__img{
-    margin: 20px 20px;
+    margin: 10px;
+    max-width: 300px;
+    height: auto;
 }
 
 .footer__text{
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    text-align: center;
     color: var(--cor-text);
     font-family: var(--font-text);
+    padding: 10px;
 }
 
 .footer__text p{
-    margin-right: 10vh;
-    margin-top: 10vh;
-    margin-bottom: 10vh;
-    margin-right: 0vh;
+    margin: 10px;
     font-size: 20px;
 }
 
@@ -365,7 +380,7 @@ header, .logo{
         object-position: center top;
         
     }
-}
+} 
 
 @media (max-width: 897px) {
     .post__cards{
