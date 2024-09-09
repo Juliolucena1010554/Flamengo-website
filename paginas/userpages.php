@@ -96,7 +96,7 @@
             </section>
             <p> ID: <?php echo $cont['id']; ?> </p>
             <p>Nome: <?php echo $cont['adminlog']; ?></p>
-            <p>Senha: <?php echo $cont['adminpass']; ?></p>
+            <!-- <p>Senha: <?php echo $cont['adminpass']; ?></p> -->
             <section class="buttons__cards">
                 
                 <form action="../model/editaradmin.php" method="post">
