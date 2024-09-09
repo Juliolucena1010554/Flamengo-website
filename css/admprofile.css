@@ -1,0 +1,157 @@
+.new-amsterdam-regular {
+    font-family: "New Amsterdam", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .rajdhani-medium {
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  .suse-uniquifier {
+    font-family: "SUSE", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+:root{
+    --cor-princ: #D2232A;
+    --cor-seg: #000000;
+    --cor-text: #ffff;
+    --cor-text-title: #fa0000;
+    --cor-text-news: #000000;
+    --cor-blackbox: rgba(0, 0, 0, 0.7);
+    --padding-size: 0px 8px;
+    --font-text: "Rajdhani", sans-serif;
+    --font-title: "New Amsterdam", sans-serif;
+    --font-text-side-bar: "SUSE", sans-serif;
+    --box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    --border-news:  1px solid black;
+    --font-size-title: 20px;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+header{
+    height: 15%;
+    width: 100%;
+    background-color: var(--cor-princ);
+    font-family: var(--font-title);
+    color: var(--cor-text);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.header__container{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.header__container p{
+    font-size: 30px;
+}
+
+
+.logo{
+    width: 100px;
+    height: 100px;
+    margin: 5px 0px 5px 5px;
+}
+
+.side__bar__container{
+    position: fixed;
+    display: block;
+    justify-content: center;
+    background-color: #000000;
+    width: 13%;
+    height:100%;
+    font-family: var(--font-text-side-bar);
+    top: 15%;
+}
+
+.side__bar__cards a{
+    display: flex;
+    row-gap: 10px;
+    column-gap: 10px;
+    margin: 20px 0px 20px 20px;
+    overflow: hidden;
+}
+
+.side__bar__cards p, i, a{
+    text-decoration: none;
+    color: var(--cor-text);
+}
+
+.side__bar__cards p, i{
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    font-size: 30px;
+}
+
+
+/* Mexer a partir daqui  */
+
+.admin__profile__container{
+    margin-left: 14%;
+    margin-right: 1%;
+    margin-top: 10%;
+    border: 1px solid black;
+}
+
+.admin__profile__text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.admin__profile__text h1{
+    font-family: var(--font-text);
+    font-size: 40px;
+    margin-top: 20px;
+}
+
+.admin__profile__card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.admin__profile__card__image{
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+}
+.admin__profile__card__image img{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    margin: 50px 50px;
+}
+.admin__profile__card__text h1{
+    color: var(--cor-text-news);
+    font-family: var(--font-text);
+    font-size: 25px;
+}
+
+.buttons__cards input{
+    display: flex;
+    margin: 10px 10px;
+    width: 100px;
+    height: 25px;
+    border: 1px solid black;
+    border-radius: 5px;
+    color: var(--cor-text);
+    font-size: 17px;
+}

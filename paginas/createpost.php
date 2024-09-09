@@ -51,7 +51,7 @@
             </section>
 
             <section class="side__bar__cards">
-                <a href="">
+                <a href="adminprofile.php">
                     <i class="fi fi-rr-user"></i>
                     <p> Perfil </p>
                 </a>            
@@ -63,9 +63,8 @@
                     <p> Sair </p>
                 </a>            
             </section>
-
     </section>
-
+    
     <section class="create__post__container">
     <h1>Crie um novo post</h1>
                 <form action="../model/createpost.php" method="post" enctype="multipart/form-data">

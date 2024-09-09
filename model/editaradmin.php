@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $nome = isset($_POST['nome']) ? $_POST['nome'] : '';
     $senha = isset($_POST['senha']) ? $_POST['senha'] : '';
-    $imagem = isset($_FILES['imagem']);
+    $imagem = isset($_FILES['imagem']) ?$_FILES['imagem']:null;
     $imagem_atual = $cont['adminimage'];
 
     if (!empty($imagem['name'])) {

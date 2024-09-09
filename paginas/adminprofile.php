@@ -16,14 +16,14 @@
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.5.1/uicons-regular-straight/css/uicons-regular-straight.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.5.1/uicons-solid-rounded/css/uicons-solid-rounded.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.5.1/uicons-regular-rounded/css/uicons-regular-rounded.css'>
-    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/admprofile.css">
     <?php
         include_once '../factory/connect.php';
         session_start();
 
         // Verifica se o usuário está logado
         if (!isset($_SESSION['adminlog'])) {
-            header("Location: adminlogin.php");
+            header("Location: adminlogin.php");   
             exit();
         }
     ?>
@@ -40,7 +40,7 @@
 
     <section class="side__bar__container">
             <section class="side__bar__cards">
-                <a href="">
+                <a href="adminhome.php">
                     <i class="fi fi-rr-home"></i>
                     <p> Início </p>
                 </a>            
@@ -73,90 +73,47 @@
                     <p> Sair </p>
                 </a>            
             </section>
-        </section>
-            </section>
     </section>
-    <section class="body__center"> 
-        <h1> Bem-vindo, <?php echo ($_SESSION['adminlog']); ?>. </h1>
+        <?php 
+        $nome = $_SESSION['adminlog'];
+        $sql = "SELECT * FROM tb_admin WHERE adminlog = '$nome';";
+        $resul = mysqli_query($conn, $sql);
+    
         
-        <section class="body__post">
-            <h3 class="body__post__text"> POSTS </h3>
-        </section>
-        
-        <section class="body__cards__container">
+        if ($resul) {
+            $cont = mysqli_fetch_assoc($resul);
+            if ($cont) {
+                ?>    
+                <section class="admin__profile__container">
+                    <section class="admin__profile__text">
+                        <h1>Perfil</h1>
+                    </section>
+                    <section class="admin__profile__card">
+                        <section class="admin__profile__card__image">
+                            <img src="../misc/fotos/post/<?php echo $cont['adminimage']; ?>" alt="">
+                        </section>
+                        
+                        <section class="admin__profile__card__text">
+                            <h1><?php echo $cont['adminlog'];  ?></h1>
+                        </section>
+                        <section class="buttons__cards">
+                
+                            <form action="../model/editaradmin.php" method="post">
+                                <input type="hidden" name="id" value="<?php echo $cont['id'] ?>">
+                                <input type="submit" value="Editar" style="background-color: green;">
+                            </form>
+                            
+                            <form action="../model/deleteadmin.php" method="post">
+                                <input type="hidden" name="id" value="<?php echo $cont['id'] ?>">
+                                <input type="submit" value="Deletar" style="background-color: red;">
+                            </form>
+                            
+                        </section>
+                    </section>
+                </section>
             <?php
-            $sql = 'SELECT * FROM tb_post;';
-            $resul = mysqli_query($conn, $sql);
-            while ($cont = mysqli_fetch_array($resul)) { 
+                }
+        }
             ?>
-                <section class="body__cards__content">
-                    <img src="../misc/fotos/post/<?php echo $cont['imagem']; ?>" alt="">
-                    <section class="body__cards__words">
-                        <p class="body__cards__title">
-                            <?php echo $cont['titulo']; ?>
-                        </p>
-                        <p class="body__cards__text">
-                            <?php echo $cont['materia']; ?>
-                        </p>
-                    </section>
-                </section>
-                <section class="body__cards__buttons__container">
-                    <section class="body__cards__buttons">
-                        <form action="../model/deletepost.php" method="post">
-                            <input type="hidden" name="id" value="<?php echo $cont['id']; ?>">
-                            <input type="submit" value="Deletar">
-                        </form>
-                    </section>
-
-                    <section class="body__cards__buttons">
-                        <form action="../model/editpost.php" method="post">
-                            <input type="hidden" name="id" value="<?php echo $cont['id']; ?>">
-                            <input type="submit" value="Editar" style="background-color: green;">
-                        </form>
-                    </section>
-                </section>
-            <?php } ?>
         </section>
     </section>
-    </body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                <!-- <?php
-
-    $sql = 'SELECT * FROM tb_post;'; 
-
-    $resul = mysqli_query($conn, $sql); 
-    while ($cont = mysqli_fetch_array($resul)) {
-   
-
-        echo $cont['id'] . ' - ' . $cont['titulo'] . '<br>'; 
-
-        echo '<img src="../misc/fotos/post/'.$cont['imagem'].'" alt="descrição da imagem" class="fotos">';
-        echo '<a href="cadastro.php?ex='.$cont['id'].'">X</a>'; 
-    }
-    ?> -->

@@ -50,7 +50,7 @@
                 <a href="createpost.php">
                     <i class="fi fi-rr-add-document"></i>
                     <p> Criar Postagens </p>
-                </a href="">            
+                </a>            
             </section>
 
             <section class="side__bar__cards">
@@ -61,7 +61,7 @@
             </section>
 
             <section class="side__bar__cards">
-                <a href="">
+                <a href="adminprofile.php">
                     <i class="fi fi-rr-user"></i>
                     <p> Perfil </p>
                 </a>            
